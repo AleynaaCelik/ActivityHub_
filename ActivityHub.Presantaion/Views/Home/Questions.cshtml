@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Etkinlik Seçimi";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik Seçimi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.16.0/dist/full.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-lg mx-auto p-6 bg-[#D8F3DC] bg-opacity-90 rounded-lg shadow-md mt-10">
+        <h2 class="text-2xl font-bold mb-6 text-center">Etkinlik Seçimi</h2>
+        <form asp-action="SubmitQuestions" method="post" class="needs-validation">
+            <!-- Outdoor or Indoor -->
+            <div class="mb-4">
+                <label for="outdoorOrIndoor" class="block text-sm font-medium text-gray-700">Açık hava mı kapalı hava mı tercih edersiniz?</label>
+                <select id="outdoorOrIndoor" name="OutdoorOrIndoor" class="select select-bordered w-full mt-1" required>
+                    <option value="">Seçiniz...</option>
+                    <option value="Açık Hava">Açık Hava</option>
+                    <option value="Kapalı Hava">Kapalı Hava</option>
+                </select>
+            </div>
+
+            <!-- Activity Type -->
+            <div class="mb-4">
+                <label for="activityType" class="block text-sm font-medium text-gray-700">Hareketli mi hareketsiz mi etkinlikleri tercih edersiniz?</label>
+                <select id="activityType" name="ActivityType" class="select select-bordered w-full mt-1" required>
+                    <option value="">Seçiniz...</option>
+                    <option value="Hareketli">Hareketli</option>
+                    <option value="Hareketsiz">Hareketsiz</option>
+                </select>
+            </div>
+
+            <!-- Interests -->
+            <div class="mb-4">
+                <label for="interests" class="block text-sm font-medium text-gray-700">İlgi alanlarınız neler? (Birden fazla seçebilirsiniz)</label>
+                <select id="interests" name="Interests" class="select select-bordered w-full mt-1" multiple required>
+                    <option value="Okuma">Okuma</option>
+                    <option value="Müzik Dinleme">Müzik Dinleme</option>
+                    <option value="Yürüyüş">Yürüyüş</option>
+                    <option value="Spor">Spor</option>
+                    <option value="Oyun">Oyun</option>
+                    <option value="Yemek">Yemek</option>
+                    <!-- Gerektiğinde daha fazla ilgi alanı ekleyin -->
+                </select>
+            </div>
+
+            <!-- Time Preference -->
+            <div class="mb-4">
+                <label for="timePreference" class="block text-sm font-medium text-gray-700">Etkinlik yapmayı tercih ettiğiniz zaman dilimi nedir?</label>
+                <div class="mt-1 flex space-x-4">
+                    <label class="flex items-center">
+                        <input type="radio" name="TimePreference" value="Hafta İçi" class="radio radio-primary" required>
+                        <span class="ml-2">Hafta İçi</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="TimePreference" value="Hafta Sonu" class="radio radio-primary" required>
+                        <span class="ml-2">Hafta Sonu</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Group Size -->
+            <div class="mb-4">
+                <label for="groupSize" class="block text-sm font-medium text-gray-700">Etkinlikleri tek başınıza mı yoksa grup halinde mi yapmayı tercih edersiniz?</label>
+                <div class="mt-1 flex space-x-4">
+                    <label class="flex items-center">
+                        <input type="radio" name="GroupSize" value="Tek Başına" class="radio radio-primary" required>
+                        <span class="ml-2">Tek Başına</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="GroupSize" value="Grup Halinde" class="radio radio-primary" required>
+                        <span class="ml-2">Grup Halinde</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Mood -->
+            <div class="mb-4">
+                <label for="mood" class="block text-sm font-medium text-gray-700">İçinde bulunduğunuz ruh haline en uygun etkinlik türleri nelerdir? (Birden fazla seçebilirsiniz)</label>
+                <select id="mood" name="Mood" class="select select-bordered w-full mt-1" multiple required>
+                    <option value="Stres Atma">Stres Atma</option>
+                    <option value="Sakinleştirme">Sakinleştirme</option>
+                    <option value="Neşelendirme">Neşelendirme</option>
+                    <!-- Gerektiğinde daha fazla ruh hali ekleyin -->
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full">Önerileri Al</button>
+        </form>
+    </div>
+</body>
+</html>
