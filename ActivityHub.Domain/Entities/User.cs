@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿
+using Microsoft.AspNetCore.Identity;
 
 namespace ActivityHub.Domain.Entities
 {
-    public class User : IdentityUser
+    public class User : IdentityUser<string>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
