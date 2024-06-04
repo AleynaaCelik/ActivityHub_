@@ -21,9 +21,9 @@ namespace ActivityHub.Presantaion.Controllers
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string email = "")
         {
-            return View();
+            return View(model: email);
         }
         // POST: /User/Register
         [HttpPost]
@@ -41,7 +41,10 @@ namespace ActivityHub.Presantaion.Controllers
                 };
 
                 await _userService.AddUserAsync(createUserDto);
-                return RedirectToAction(nameof(Login), "User");
+                return RedirectToAction(nameof(Login), "User", new
+                {
+                    email = createUserDto.Email,
+                });
             }
             return View(createUserViewModel);
         }
