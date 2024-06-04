@@ -5,10 +5,10 @@ namespace ActivityHub.Presantaion.Models
     public class CreateUserViewModel
     {
         [Required(ErrorMessage = "İsim gereklidir.")]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = "Hakan";
 
         [Required(ErrorMessage = "Soyisim gereklidir.")]
-        public string LastName { get; set; }
+        public string LastName { get; set; } = "Öztürk";
 
         [Required(ErrorMessage = "Email gereklidir.")]
         [EmailAddress(ErrorMessage = "Geçerli bir email adresi giriniz.")]

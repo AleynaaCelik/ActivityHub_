@@ -1,6 +1,8 @@
-﻿namespace ActivityHub.Domain.Entities
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+
+namespace ActivityHub.Domain.Entities
 {
-    public class User : EntityBase
+    public class User : IdentityUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
