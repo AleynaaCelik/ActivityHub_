@@ -20,28 +20,44 @@
             .btn-custom:hover {
                 background-color: rgba(25, 54, 44, 0.7); /* Slightly more transparent on hover */
             }
+
+        .form-container {
+            background-color: rgba(216, 243, 220, 0.8); /* Light green and transparent */
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .input-custom {
+            background-color: transparent; /* Initial background color */
+            transition: background-color 0.3s ease;
+            background-color: white;
+        }
+
+            
     </style>
 </head>
 <body class="bg-gray-100">
-    <div class="max-w-lg mx-auto p-6 bg-[#D8F3DC] bg-opacity-90 rounded-lg shadow-md mt-10">
+    <div class="max-w-lg mx-auto p-6 form-container mt-10">
         <h2 class="text-2xl font-bold mb-6 text-center text-black">Register</h2>
         <form asp-action="Register" method="post">
             <!-- Name -->
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-black">Name</label>
-                <input type="text" id="name" name="Name" class="input input-bordered w-full mt-1" required>
+                <input type="text" id="name" name="Name" class="input input-bordered input-custom w-full mt-1" required>
             </div>
 
             <!-- Email -->
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-black">Email</label>
-                <input type="email" id="email" name="Email" class="input input-bordered w-full mt-1" required>
+                <input type="email" id="email" name="Email" class="input input-bordered input-custom w-full mt-1" required>
             </div>
 
             <!-- Password -->
             <div class="mb-4">
                 <label for="password" class="block text-sm font-medium text-black">Password</label>
-                <input type="password" id="password" name="Password" class="input input-bordered w-full mt-1" required>
+                <input type="password" id="password" name="Password" class="input input-bordered input-custom w-full mt-1" required>
             </div>
 
             <button type="submit" class="btn btn-custom w-full">Register</button>
